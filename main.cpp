@@ -2,42 +2,55 @@
 
 using namespace std;
 
-int tamano=0;
-int PosicionHeroe=0;
+int PosicionHeroex=0;
+int PosicionHeroey=0;
 bool GameOver=false;
 
-void dibujar_mapa(){
-    char mapa[tamano];
-    for(int i=0;i<sizeof(mapa);i++){
-        mapa[i]='1';
-    }
-    for(int i=0;i<sizeof(mapa);i++){
-        if(PosicionHeroe==i){
-            cout<<"H";
-        }else{
-            cout<<mapa[i];
+void dibujar_mapa(int x, int y){
+    char mapa[x][y];
+    for(int i=0;i<x;i++){
+        for(int j=0; j<y;j++){
+            mapa[i][j]='1';
         }
+    }
+    for(int i=0;i<x;i++){
+        for(int j=0; j<y;j++){
+            if(PosicionHeroex==j && PosicionHeroey==i){
+                cout<<'H';
+            }else{
+            cout<<mapa[i][j];
+            }
+        }
+        cout<<endl;
     }
 }
 
 int main()
 {
+    int x=0;
+    int y=0;
     char movimiento=' ';
     cout<<"Bienvenido al laberinto interactivo en c++"<<endl;
-    cout<<"Para comenzar coloca de que tamano deseas que sea tu laberinto: ";
-    cin>>tamano;
+    cout<<"Para comenzar coloca cuantas filas deseas que tenga tu laberinto: ";
+    cin>>x;
+    cout<<"Para comenzar coloca cuantas columnas deseas que tenga tu laberinto: ";
+    cin>>y;
 
-    dibujar_mapa();
+    dibujar_mapa(x,y);
     while(GameOver==false){
         cin>>movimiento;
         if(movimiento=='a'){
-            PosicionHeroe-=1;
+            PosicionHeroex-=1;
         }else if(movimiento=='d'){
-            PosicionHeroe+=1;
+            PosicionHeroex+=1;
+        }else if(movimiento=='w'){
+            PosicionHeroey-=1;
+        }else if(movimiento=='s'){
+            PosicionHeroey+=1;
         }else if(movimiento=='p'){
             GameOver=true;
         }
-        dibujar_mapa();
+        dibujar_mapa(x,y);
     }
     return 0;
 }

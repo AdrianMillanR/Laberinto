@@ -1,20 +1,17 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int PosicionHeroex=0;
 int PosicionHeroey=0;
 bool GameOver=false;
+char mapa[8][8];
+string heroe="Unregister";
 
-void dibujar_mapa(int x, int y){
-    char mapa[x][y];
-    for(int i=0;i<x;i++){
-        for(int j=0; j<y;j++){
-            mapa[i][j]='1';
-        }
-    }
-    for(int i=0;i<x;i++){
-        for(int j=0; j<y;j++){
+void dibujar_mapa(){
+    for(int i=0;i<8;i++){
+        for(int j=0; j<8;j++){
             if(PosicionHeroex==j && PosicionHeroey==i){
                 cout<<'H';
             }else{
@@ -25,18 +22,67 @@ void dibujar_mapa(int x, int y){
     }
 }
 
+void llenar_mapa(){
+    for(int i=0;i<8;i++){
+        for(int j=0; j<8;j++){
+            mapa[i][j]='1';
+        }
+    }
+}
+
+void registrar(){
+    ofstream RegistrarDatos("Datos.txt");
+    if(RegistrarDatos.is_open()){
+        cout<<"Coloca el nombre de tu heroe"<<endl;
+        cin>>heroe;
+        RegistrarDatos<<heroe<<endl;
+    }
+}
+
+void obtener_heroe(){
+    ifstream ObtenerDatos("Datos.txt");
+    string linea;
+    if(ObtenerDatos.is_open()){
+        while(getline(ObtenerDatos,linea)){
+                if(linea!=""){
+                    heroe=linea;
+                }
+            }
+    }
+}
+
+void menu(){
+    int opcion=0;
+    cout<<"Bienvenido al laberinto interactivo en c++"<<endl;
+    cout<<"Registrate y comienza a jugar"<<endl;
+    cout<<"1.- Registrar Heroe"<<endl;
+    cout<<"2.- Jugar"<<endl;
+    cin>>opcion;
+    switch(opcion){
+case 1:
+    registrar();
+    menu();
+    break;
+case 2:
+    break;
+default:
+    cout<<"Opcion no valida"<<endl;
+    menu();
+    break;
+    }
+
+}
+
 int main()
 {
-    int x=0;
-    int y=0;
+    menu();
+    llenar_mapa();
+    obtener_heroe();
     char movimiento=' ';
-    cout<<"Bienvenido al laberinto interactivo en c++"<<endl;
-    cout<<"Para comenzar coloca cuantas filas deseas que tenga tu laberinto: ";
-    cin>>x;
-    cout<<"Para comenzar coloca cuantas columnas deseas que tenga tu laberinto: ";
-    cin>>y;
+    cout<<"Bienvenido "<<heroe<<endl;
+    cout<<"Aqui comienza tu aventura"<<endl;
+    dibujar_mapa();
 
-    dibujar_mapa(x,y);
     while(GameOver==false){
         cin>>movimiento;
         if(movimiento=='a'){
@@ -50,7 +96,7 @@ int main()
         }else if(movimiento=='p'){
             GameOver=true;
         }
-        dibujar_mapa(x,y);
+        dibujar_mapa();
     }
     return 0;
 }

@@ -1,37 +1,48 @@
 #include "Player.h"
 #include <iostream>
+#include "GameMap.h"
 using namespace std;
 Player::Player()
 {
-   x=0;
-   y=0;
+   x=1;
+   y=1;
 }
 
-void Player::Mover(){
+void Player::Mover(GameMap Map){
     char tecla=' ';
     cin>>tecla;
     switch(tecla){
 case 'w':
-    cout<<"Te moviste arriba"<<endl;
-    x--;
+    if(Map.IsBlock(x-1,y)){
+
+    }else{
+        x--;
+    }
     break;
 case 's':
-    cout<<"Te moviste abajo"<<endl;
-    x++;
+    if(Map.IsBlock(x+1,y)){
+
+    }else{
+        x++;
+    }
     break;
 case 'a':
-    cout<<"Te moviste izquierda"<<endl;
-    y--;
+    if(Map.IsBlock(x,y-1)){
+
+    }else{
+        y--;
+    }
     break;
 case 'd':
-    cout<<"Te moviste derecha"<<endl;
-    y++;
+    if(Map.IsBlock(x,y+1)){
+
+    }else{
+        y++;
+    }
     break;
 default:
-    cout<<"Opcion no disponible"<<endl;
     break;
     }
-    cout<<"La cordenadas actuales del jugador son: "<<x<<","<<y<<endl;
 }
 
 int Player::Getx(){

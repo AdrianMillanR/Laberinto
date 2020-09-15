@@ -6,8 +6,7 @@ class MapCell
 {
     public:
         MapCell();
-
-        int id;
+        char id;
 
     protected:
 

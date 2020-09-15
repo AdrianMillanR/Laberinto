@@ -15,7 +15,8 @@ int main()
     while(GameOver==false){
         Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
         Map.DrawMap();
-        Hero.Mover();
+        cout<<"Elige una opcion: (w)Arriba, (s)Abajo, (a)Izquierda, (d)Derecha (g)Guardad"<<endl;
+        Hero.Mover(Map);
     }
     return 0;
 }

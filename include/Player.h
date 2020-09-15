@@ -1,12 +1,13 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "GameMap.h"
 
 
 class Player
 {
     public:
         Player();
-        void Mover();
+        void Mover(GameMap Map);
         int Getx();
         int Gety();
 

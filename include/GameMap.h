@@ -14,9 +14,11 @@ class GameMap
         MapCell cells[15][10];
         void DrawMap();
         void SetPlayerCell(int PlayerX,int PlayerY);
+        bool IsBlock(int x, int y);
+        void SaveMap();
 
     protected:
-
+        void LoadMap();
 
     private:
 };

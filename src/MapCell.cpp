@@ -5,6 +5,7 @@ using namespace std;
 
 MapCell::MapCell()
 {
-    id=0;
+    id=' ';
 }
+
 

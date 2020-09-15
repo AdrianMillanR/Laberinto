@@ -6,9 +6,11 @@ class Player
 {
     public:
         Player();
-        void Saludar();
+        void Mover();
 
     protected:
+        int x;
+        int y;
 
     private:
 };

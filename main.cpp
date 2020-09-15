@@ -6,11 +6,14 @@ using namespace std;
 
 int main()
 {
-    GameMap Map;
     bool GameOver=false;
+    GameMap Map;
     Player Hero;
+
     cout<<"Inicia el juego"<<endl;
+
     while(GameOver==false){
+        Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
         Map.DrawMap();
         Hero.Mover();
     }

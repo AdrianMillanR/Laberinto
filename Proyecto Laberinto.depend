@@ -9,15 +9,15 @@
 	<iostream>
 	"Player.h"
 
-1600187761 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\main.cpp
+1600188980 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\main.cpp
 	<iostream>
 	"Player.h"
 	"MapCell.h"
 	"GameMap.h"
 
-1600185010 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\player.h
+1600188808 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\player.h
 
-1600185162 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\player.cpp
+1600190324 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\player.cpp
 	"Player.h"
 	<iostream>
 
@@ -27,10 +27,10 @@
 
 1600187133 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\mapcell.h
 
-1600187604 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\gamemap.h
+1600190098 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\gamemap.h
 	"MapCell.h"
 
-1600187789 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\gamemap.cpp
+1600190250 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\gamemap.cpp
 	"GameMap.h"
 	"iostream"
 

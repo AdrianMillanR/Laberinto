@@ -7,6 +7,8 @@ class Player
     public:
         Player();
         void Mover();
+        int Getx();
+        int Gety();
 
     protected:
         int x;

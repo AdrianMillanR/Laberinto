@@ -13,23 +13,31 @@ void Player::Mover(){
     switch(tecla){
 case 'w':
     cout<<"Te moviste arriba"<<endl;
-    y--;
+    x--;
     break;
 case 's':
     cout<<"Te moviste abajo"<<endl;
-    y++;
+    x++;
     break;
 case 'a':
     cout<<"Te moviste izquierda"<<endl;
-    x--;
+    y--;
     break;
 case 'd':
     cout<<"Te moviste derecha"<<endl;
-    x++;
+    y++;
     break;
 default:
     cout<<"Opcion no disponible"<<endl;
     break;
     }
     cout<<"La cordenadas actuales del jugador son: "<<x<<","<<y<<endl;
+}
+
+int Player::Getx(){
+    return x;
+}
+
+int Player::Gety(){
+    return y;
 }

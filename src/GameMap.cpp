@@ -64,6 +64,14 @@ bool GameMap::IsBlock(int x, int y){
     }
 }
 
+bool GameMap::IsChest(int x, int y){
+    if(cells[x][y].id=='$'){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 /*
 void GameMap::SaveMap(){
     ofstream EscribeMapa("Mapa.txt");

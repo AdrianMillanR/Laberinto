@@ -15,6 +15,7 @@ class GameMap
         void DrawMap();
         void SetPlayerCell(int PlayerX,int PlayerY);
         bool IsBlock(int x, int y);
+        bool IsChest(int x, int y);
         void SaveMap();
 
     protected:

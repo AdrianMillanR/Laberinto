@@ -7,7 +7,7 @@ class Player
 {
     public:
         Player();
-        void Mover(GameMap Map);
+        bool Mover(GameMap Map);
         int Getx();
         int Gety();
         void LoadHero();

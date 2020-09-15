@@ -21,6 +21,22 @@ void intro(){
     }
     LeerIntro.close();
 }
+void Victory(){
+    string linea;
+    ifstream LeerIntro("Victory.txt");
+    if(LeerIntro.is_open()){
+            while(getline(LeerIntro,linea)){
+                cout<<linea<<endl;
+            }
+            cout<<"Felicidades, Encontraste el tesoro"<<endl;
+            cout<<"Presiona cualquier tecla para continuar...";
+            cin>>linea;
+
+    }else{
+        cout<<"Error al cargar el Intro"<<endl;
+    }
+    LeerIntro.close();
+}
 int main()
 {
     bool GameOver=false;
@@ -29,12 +45,15 @@ int main()
     Hero.LoadHero();
 
     intro();
+    Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
+    Map.DrawMap();
 
     while(GameOver==false){
+        cout<<"Elige una opcion: (w)Arriba, (s)Abajo, (a)Izquierda, (d)Derecha (g)Guardad"<<endl;
+        GameOver=Hero.Mover(Map);
         Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
         Map.DrawMap();
-        cout<<"Elige una opcion: (w)Arriba, (s)Abajo, (a)Izquierda, (d)Derecha (g)Guardad"<<endl;
-        Hero.Mover(Map);
     }
+    Victory();
     return 0;
 }

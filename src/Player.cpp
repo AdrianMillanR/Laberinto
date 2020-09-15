@@ -9,42 +9,63 @@ Player::Player()
    y=1;
 }
 
-void Player::Mover(GameMap Map){
+bool Player::Mover(GameMap Map){
     char tecla=' ';
     cin>>tecla;
     switch(tecla){
 case 'w':
+    if(Map.IsChest(x-1,y)){
+        x--;
+        return true;
+    }
     if(Map.IsBlock(x-1,y)){
-
+        return false;
     }else{
         x--;
+        return false;
     }
     break;
 case 's':
+    if(Map.IsChest(x+1,y)){
+        x++;
+        return true;
+    }
     if(Map.IsBlock(x+1,y)){
-
+        return false;
     }else{
         x++;
+        return false;
     }
     break;
 case 'a':
+    if(Map.IsChest(x,y-1)){
+        y--;
+        return true;
+    }
     if(Map.IsBlock(x,y-1)){
-
+        return false;
     }else{
         y--;
+        return false;
     }
     break;
 case 'd':
+    if(Map.IsChest(x,y+1)){
+        y++;
+        return true;
+    }
     if(Map.IsBlock(x,y+1)){
-
+        return false;
     }else{
         y++;
+        return false;
     }
     break;
 case 'g':
-    //Map.SaveMap();
+    return false;
     break;
 default:
+    return false;
     break;
     }
 }

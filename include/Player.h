@@ -10,6 +10,7 @@ class Player
         void Mover(GameMap Map);
         int Getx();
         int Gety();
+        void LoadHero();
 
     protected:
         int x;

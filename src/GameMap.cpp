@@ -32,7 +32,6 @@ void GameMap::SetPlayerCell(int PlayerX, int PlayerY){
 }
 
 void GameMap::LoadMap(){
-
     string linea;
     ifstream LeerMapa("Mapa.txt");
     int j=0;
@@ -65,6 +64,20 @@ bool GameMap::IsBlock(int x, int y){
     }
 }
 
+/*
 void GameMap::SaveMap(){
-    //Proximamente
-}
+    ofstream EscribeMapa("Mapa.txt");
+    if(EscribeMapa.is_open()){
+        for(int i=0; i<15;i++){
+            for(int j=0; j<10; j++){
+                if(cells[i][j].id==' '){
+                    EscribeMapa<<'0';
+                }else{
+                    EscribeMapa<<cells[i][j].id;
+                    }
+            }
+        EscribeMapa<<endl;
+        }
+    }
+    EscribeMapa.close();
+}*/

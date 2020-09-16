@@ -11,12 +11,14 @@ class GameMap
 
         //Declaramos un apuntador de tipo MapcCell llamado "PlayerCell"
         MapCell* PlayerCell;
-        MapCell cells[15][10];
+        MapCell cells[15][50];
         void DrawMap();
         void SetPlayerCell(int PlayerX,int PlayerY);
         bool IsBlock(int x, int y);
         bool IsChest(int x, int y);
+        bool IsNextLevel(int x, int y);
         void SaveMap();
+        void LoadLevel(int lvl);
 
     protected:
         void LoadMap();

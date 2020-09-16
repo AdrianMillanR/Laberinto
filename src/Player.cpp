@@ -9,63 +9,76 @@ Player::Player()
    y=1;
 }
 
-bool Player::Mover(GameMap Map){
+int Player::Mover(GameMap Map){
     char tecla=' ';
     cin>>tecla;
     switch(tecla){
 case 'w':
     if(Map.IsChest(x-1,y)){
         x--;
-        return true;
+        return 1;
+    }
+    if(Map.IsNextLevel(x-1,y)){
+        x--;
+        return 2;
     }
     if(Map.IsBlock(x-1,y)){
-        return false;
+        return 0;
     }else{
         x--;
-        return false;
+        return 0;
     }
     break;
 case 's':
     if(Map.IsChest(x+1,y)){
         x++;
-        return true;
+        return 1;
+    }
+    if(Map.IsNextLevel(x+1,y)){
+        x++;
+        return 2;
     }
     if(Map.IsBlock(x+1,y)){
-        return false;
+        return 0;
     }else{
         x++;
-        return false;
+        return 0;
     }
     break;
 case 'a':
     if(Map.IsChest(x,y-1)){
         y--;
-        return true;
+        return 1;
+    }
+    if(Map.IsNextLevel(x,y-1)){
+        y--;
+        return 2;
     }
     if(Map.IsBlock(x,y-1)){
-        return false;
+        return 0;
     }else{
         y--;
-        return false;
+        return 0;
     }
     break;
 case 'd':
     if(Map.IsChest(x,y+1)){
         y++;
-        return true;
+        return 1;
+    }
+    if(Map.IsNextLevel(x,y+1)){
+        y++;
+        return 2;
     }
     if(Map.IsBlock(x,y+1)){
-        return false;
+        return 0;
     }else{
         y++;
-        return false;
+        return 0;
     }
     break;
-case 'g':
-    return false;
-    break;
 default:
-    return false;
+    return 0;
     break;
     }
 }
@@ -78,24 +91,10 @@ int Player::Gety(){
     return y;
 }
 
-void Player::LoadHero(){
-    string linea;
-    ifstream LeerMapa("Mapa.txt");
-    int j=0;
-    if(LeerMapa.is_open()){
-            while(getline(LeerMapa,linea)){
-                for(int i=0;i<10;i++){
-                    if(linea[i]=='3'){
-                        x=j;
-                        y=i;
-                    }
-                }
-                j++;
-            }
-    }else{
-        cout<<"Error al cargar Heroe"<<endl;
-    }
-    LeerMapa.close();
-
-
+void Player::Setx(int x){
+    this->x=x;
 }
+void Player::Sety(int y){
+    this->y=y;
+}
+

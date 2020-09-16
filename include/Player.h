@@ -7,10 +7,11 @@ class Player
 {
     public:
         Player();
-        bool Mover(GameMap Map);
+        int Mover(GameMap Map);
         int Getx();
         int Gety();
-        void LoadHero();
+        void Setx(int x);
+        void Sety(int y);
 
     protected:
         int x;

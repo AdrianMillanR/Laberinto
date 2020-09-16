@@ -9,17 +9,18 @@
 	<iostream>
 	"Player.h"
 
-1600277897 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\main.cpp
+1600291542 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\main.cpp
 	<iostream>
 	"Player.h"
 	"MapCell.h"
 	"GameMap.h"
 	<fstream>
+	"Enemy.h"
 
 1600277888 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\player.h
 	"GameMap.h"
 
-1600277957 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\player.cpp
+1600281083 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\player.cpp
 	"Player.h"
 	<iostream>
 	"GameMap.h"
@@ -31,11 +32,27 @@
 
 1600197529 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\mapcell.h
 
-1600279756 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\gamemap.h
+1600291485 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\gamemap.h
 	"MapCell.h"
 
-1600279783 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\gamemap.cpp
+1600291749 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\gamemap.cpp
 	"GameMap.h"
 	"iostream"
 	"fstream"
+
+1600291549 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\enemy.cpp
+	"Enemy.h"
+	"GameMap.h"
+	"MapCell.h"
+	"iostream"
+	"fstream"
+
+1600291474 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\enemy.h
+	"GameMap.h"
+	"MapCell.h"
+
+1600292727 source:c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\src\verticalenemy.cpp
+	"VerticalEnemy.h"
+
+1600292721 c:\users\adria\documents\cursos de programacion\platzi\introducción a c++\proyecto laberinto\include\verticalenemy.h
 

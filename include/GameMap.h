@@ -14,9 +14,11 @@ class GameMap
         MapCell cells[15][50];
         void DrawMap();
         void SetPlayerCell(int PlayerX,int PlayerY);
+        void SetEnemyCell(int EnemyX,int EnemyY);
         bool IsBlock(int x, int y);
         bool IsChest(int x, int y);
         bool IsNextLevel(int x, int y);
+        bool IsEnemy(int x, int y);
         void SaveMap();
         void LoadLevel(int lvl);
 

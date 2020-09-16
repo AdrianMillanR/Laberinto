@@ -14,6 +14,10 @@ int Player::Mover(GameMap Map){
     cin>>tecla;
     switch(tecla){
 case 'w':
+    if(Map.IsEnemy(x-1,y)){
+        x--;
+        return 3;
+    }
     if(Map.IsChest(x-1,y)){
         x--;
         return 1;
@@ -30,6 +34,10 @@ case 'w':
     }
     break;
 case 's':
+    if(Map.IsEnemy(x+1,y)){
+        x++;
+        return 3;
+    }
     if(Map.IsChest(x+1,y)){
         x++;
         return 1;
@@ -46,6 +54,10 @@ case 's':
     }
     break;
 case 'a':
+    if(Map.IsEnemy(x,y-1)){
+        y--;
+        return 3;
+    }
     if(Map.IsChest(x,y-1)){
         y--;
         return 1;
@@ -62,6 +74,10 @@ case 'a':
     }
     break;
 case 'd':
+    if(Map.IsEnemy(x,y+1)){
+        y++;
+        return 3;
+    }
     if(Map.IsChest(x,y+1)){
         y++;
         return 1;

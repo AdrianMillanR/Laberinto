@@ -3,6 +3,7 @@
 #include "MapCell.h"
 #include "GameMap.h"
 #include <fstream>
+#include "Enemy.h"
 using namespace std;
 
 void intro(){
@@ -37,6 +38,23 @@ void Victory(){
     }
     LeerIntro.close();
 }
+void Defeat(){
+    string linea;
+    ifstream LeerIntro("Defeat.txt");
+    if(LeerIntro.is_open()){
+            while(getline(LeerIntro,linea)){
+                cout<<linea<<endl;
+            }
+            cout<<"Te encontraste a un enemigo"<<endl;
+            cout<<"Perdiste"<<endl;
+            cout<<"Presiona cualquier tecla para continuar...";
+            cin>>linea;
+
+    }else{
+        cout<<"Error al cargar el Intro"<<endl;
+    }
+    LeerIntro.close();
+}
 int main()
 {
     int GameOver=0;
@@ -44,13 +62,21 @@ int main()
     int indicador=10;
     GameMap Map;
     Player Hero;
+    Enemy Enemy1(6,19);
+    Enemy Enemy2(8,44);
 
     intro();
     Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
+    Map.SetEnemyCell(Enemy1.Getx(),Enemy1.Gety());
+    Map.SetEnemyCell(Enemy2.Getx(),Enemy2.Gety());
     Map.DrawMap();
 
     while(GameOver==0){
         cout<<"Elige una opcion: (w)Arriba, (s)Abajo, (a)Izquierda, (d)Derecha"<<endl;
+        Enemy2.Mover();
+        Enemy1.Mover();
+        Map.SetEnemyCell(Enemy1.Getx(),Enemy1.Gety());
+        Map.SetEnemyCell(Enemy2.Getx(),Enemy2.Gety());
         indicador=Hero.Mover(Map);
         Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
         Map.DrawMap();
@@ -63,10 +89,14 @@ int main()
             indicador=10;
             Map.LoadLevel(Level);
             Map.SetPlayerCell(Hero.Getx(),Hero.Gety());
+            Map.SetEnemyCell(Enemy1.Getx(),Enemy1.Gety());
+            Map.SetEnemyCell(Enemy2.Getx(),Enemy2.Gety());
             Map.DrawMap();
+        }else if(indicador==3){
+            Defeat();
+            return 0;
         }
     }
-    cout<<indicador<<endl;
     Victory();
     return 0;
 }

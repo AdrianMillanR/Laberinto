@@ -23,12 +23,29 @@ void GameMap::SetPlayerCell(int PlayerX, int PlayerY){
     if(PlayerCell != NULL){
         //En cada entrada de datos, volverá a poner un 0 en la posición que tenía del jugador, para posteriormente
         //almacenar la nueva dirección del jugaoor y poner un 3
-        PlayerCell->id=' ';
+        if(PlayerCell->id!='X'){
+            PlayerCell->id=' ';
+        }
     }
     //PlayerCell es un apuntador que guardará la dirección en memoria donde se encuentra nuestro jugaodr
     //y en esa direccion colocará un 3
     PlayerCell= &cells[PlayerX][PlayerY];
     PlayerCell->id='H';
+}
+void GameMap::SetEnemyCell(int EnemyX,int EnemyY){
+    if(cells[EnemyX+1][EnemyY].id=='X'){
+        cells[EnemyX+1][EnemyY].id=' ';
+    }
+    if(cells[EnemyX-1][EnemyY].id=='X'){
+        cells[EnemyX-1][EnemyY].id=' ';
+    }
+    if(cells[EnemyX][EnemyY+1].id=='X'){
+        cells[EnemyX][EnemyY+1].id=' ';
+    }
+    if(cells[EnemyX][EnemyY-1].id=='X'){
+        cells[EnemyX][EnemyY-1].id=' ';
+    }
+    cells[EnemyX][EnemyY].id='X';
 }
 
 void GameMap::LoadMap(){
@@ -121,6 +138,14 @@ bool GameMap::IsChest(int x, int y){
 
 bool GameMap::IsNextLevel(int x, int y){
     if(cells[x][y].id=='O'){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool GameMap::IsEnemy(int x, int y){
+    if(cells[x][y].id=='X'){
         return true;
     }else{
         return false;

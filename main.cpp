@@ -4,6 +4,7 @@
 #include "GameMap.h"
 #include <fstream>
 #include "Enemy.h"
+#include "VerticalEnemy.h"
 using namespace std;
 
 void intro(){
@@ -63,7 +64,7 @@ int main()
     GameMap Map;
     Player Hero;
     Enemy Enemy1(6,19);
-    Enemy Enemy2(8,44);
+    VerticalEnemy Enemy2(8,44);
 
     intro();
     Map.SetPlayerCell(Hero.Getx(),Hero.Gety());

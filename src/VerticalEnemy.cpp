@@ -1,11 +1,18 @@
 #include "VerticalEnemy.h"
 
-VerticalEnemy::VerticalEnemy()
+VerticalEnemy::VerticalEnemy(int x,int y):Enemy(x,y)
 {
-    //ctor
+    this->x=x;
+    this->y=y;
+    bandera=0;
 }
 
-VerticalEnemy::~VerticalEnemy()
-{
-    //dtor
+void VerticalEnemy::Mover(){
+    if(bandera==0){
+        x++;
+        bandera=!bandera;
+    }else{
+        x--;
+        bandera=!bandera;
+    }
 }

@@ -1,12 +1,12 @@
 #ifndef VERTICALENEMY_H
 #define VERTICALENEMY_H
+#include "Enemy.h"
 
-
-class VerticalEnemy
+class VerticalEnemy : public Enemy
 {
     public:
-        VerticalEnemy();
-        virtual ~VerticalEnemy();
+        VerticalEnemy(int x, int y);
+        void Mover();
 
     protected:
 
